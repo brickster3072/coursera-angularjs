@@ -38,12 +38,11 @@
     <div class="col-md-6"  ng-controller='ToBuyController as toBuy'>
      <h2>To Buy:</h2>
      <ul>
-           <li ng-repeat="item in toBuy.items">
-             <span class="fixedwidth">Buy {{ item.quantity }} {{ item.name }}</span>
-             <button ng-click="toBuy.moveItem($index);" type="button" class="btn btn-danger btn-sm">Bought</button>
-           </li>
+       <li ng-repeat="item in toBuy.items">
+         <span class="fixedwidth">Buy {{ item.quantity }} {{ item.name }}</span>
+         <button ng-click="toBuy.moveItem($index);" type="button" class="btn btn-danger btn-sm">Bought</button>
+       </li>
      </ul>
-     <!-- <div class="emptyMessage" ng-if="!toBuy.areToBuy();">Everything is bought!</div> -->
      <div class="emptyMessage" ng-if="!toBuy.items.length">Everything is bought!</div>
     </div>
 
@@ -53,13 +52,12 @@
      <ul>
        <li ng-repeat="item in bought.items">
          Bought {{ item.quantity }} {{ item.name }}
-
        </li>
      </ul>
      <div class="emptyMessage" ng-if="!bought.items.length">Nothing bought yet.</div>
     </div>
-  </div>
-</div>
+  </div>  <!-- end row -->
+</div> <!--  end container -->
 <script src="scripts/angular.min.js"></script>
 <script src="scripts/app.js"></script>
 </body>

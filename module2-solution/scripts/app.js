@@ -6,16 +6,13 @@ angular.module('ShoppingListCheckOff', [])
 .controller('AlreadyBoughtController', AlreadyBoughtController)
 .service('ShoppingListCheckOffService',ShoppingListCheckOffService);
 
-
 ToBuyController.$inject = ['ShoppingListCheckOffService'];
 function ToBuyController(ShoppingListCheckOffService) {
-    var toBuy = this;
-    toBuy.items = ShoppingListCheckOffService.getToBuyItems();
+  var toBuy = this;
+  toBuy.items = ShoppingListCheckOffService.getToBuyItems();
 
-    toBuy.moveItem = function (itemIndex) {
-    // console.log("move index: " + itemIndex);
-    ShoppingListCheckOffService.moveItem(itemIndex);
-
+  toBuy.moveItem = function (itemIndex) {
+  ShoppingListCheckOffService.moveItem(itemIndex);
   };
 } // end ToBuyController
 
@@ -25,10 +22,8 @@ function AlreadyBoughtController(ShoppingListCheckOffService) {
     bought.items = ShoppingListCheckOffService.getBoughtItems();
 } // end AlreadyBoughtController
 
-
 function ShoppingListCheckOffService() {
    var service = this;
-
    // List of shopping items
    var toBuy = [];
    var bought = [];
@@ -44,9 +39,9 @@ function ShoppingListCheckOffService() {
                    {name: "pint of raw ether",  quantity: 1},
                    {name: "amyls",  quantity: 24}
                 ];
-   service.getToBuyItems = function () {
-     return toBuy.items;
-   };
+  service.getToBuyItems = function () {
+    return toBuy.items;
+  };
 
   service.getBoughtItems = function () {
     return bought.items;
@@ -57,10 +52,6 @@ function ShoppingListCheckOffService() {
     toMoveItem = toBuy.items.splice(itemIdex, 1);
     bought.items.splice(0, 0, toMoveItem[0]);
   };
-
-//   service.getItems = function () {
-//     return items;
-//   };
 } // end ShoppingListCheckOffService
 
 })();

@@ -1,2 +1,12 @@
 browser-sync start --server --directory --files "**/*"
 atom .
+
+update repository
+
+cmd
+cd "C:\Users\brickster3072\Desktop\coursera-angularjs\coursera-angularjs"
+create directory 'moduleXX-solution'
+put stuff in the directory
+git add .
+git commit -m 'moduleXX-solution'
+git push
